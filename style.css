@@ -1,0 +1,583 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Main Container Styling */
+.main-container {
+  position: relative;
+  background-image: url("https://images.pexels.com/photos/29536145/pexels-photo-29536145/free-photo-of-lush-green-foliage-with-creeper-plant-leaves.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"); /* Background image */
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh; /* Ensure it covers the entire screen */
+}
+
+/* Translucent Overlay for the Entire Background */
+.main-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Translucent black overlay */
+  z-index: 1; /* Overlay sits below the text but above the background */
+}
+
+/* Navbar Styling */
+nav {
+  position: relative;
+  padding: 20px;
+  z-index: 2; /* Ensure navbar stays above the background and overlay */
+}
+
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo-title {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-title img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+nav .logo-title a {
+  color: #32a852;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav .nav-links ul {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links ul li {
+  margin-left: 20px;
+}
+
+nav .nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+nav .nav-links ul li a:hover {
+  color: #27973c;
+}
+
+nav .nav-links ul li .button {
+  background-color: #32a852;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+nav .nav-links ul li .button:hover {
+  background-color: #27973c;
+  color: #fefae0;
+}
+
+/* Welcome Section */
+.welcome-section {
+  position: relative;
+  height: 50vh; /* 50% of the screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2; /* Ensure it stays above the overlay */
+}
+
+.text-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-section p {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  animation: fadeIn 4s ease-in-out 0s;
+}
+
+.explore-btn {
+  font-size: 16px;
+  padding: 12px 20px;
+  background-color: #0a7125;
+  color: rgb(246, 250, 242);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.explore-btn:hover {
+  background-color: #148128;
+}
+
+/* Separator Line */
+.separator {
+  width: 100%;
+  height: 0.7vh;
+  background-color: #035635;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* General Section Styling */
+.section {
+  padding: 20px 20px;
+  background-color: #effced;
+  color: #283618;
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  flex-wrap: wrap; /* This allows the layout to stack on smaller screens */
+}
+
+.section-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 60%; /* Left side text section */
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #32a852;
+}
+
+.section p {
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.section .explore-btn {
+  font-size: 16px;
+  padding: 12px 20px;
+  background-color: #32a852;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.section .explore-btn:hover {
+  background-color: #27973c;
+}
+
+/* Image Styling */
+.section-image {
+  flex: 1;
+  padding: 20px;
+  max-width: 45%; /* Right side image section */
+}
+
+.section-img {
+  width: 100%;
+  border-radius: 7px;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  filter: brightness(0.9);
+}
+
+/* Image Hover Animation */
+.section-img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq {
+  padding: 30px;
+  text-align: center;
+  color: #283618; /* Updated to match the green-brown theme */
+  background-color: #f0f8ff; /* Light blue for freshness */
+}
+
+.faq h2 {
+  font-size: 36px; /* Reduced slightly for a modern look */
+  padding: 20px;
+  color: #32a852; /* Thematic green color for headings */
+  font-family: "Poppins", sans-serif;
+}
+
+.faqbox {
+  font-size: 18px; /* Adjusted for readability */
+  color: #283618; /* Text color matching theme */
+  display: flex;
+  max-width: 700px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px auto;
+  background-color: #ffffff; /* White for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.faqbox:hover {
+  background-color: #dff4e0; /* Light green on hover */
+  transform: translateY(-3px); /* Subtle elevation effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faqbox span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.faqbox svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  stroke: #32a852; /* Green icon */
+  fill: none;
+  transition: transform 0.3s ease;
+}
+
+.faqbox:hover svg {
+  transform: rotate(90deg); /* Smooth rotate effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq h2 {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .faqbox {
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .faqbox span {
+    margin-bottom: 10px;
+  }
+
+  .faqbox svg {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .faq h2 {
+    font-size: 24px;
+  }
+
+  .faqbox {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+/* Get Started Section */
+.get-started-section {
+  padding: 50px 20px;
+  background-color: #e3fae3; /* Light background for contrast */
+  color: #283618;
+}
+
+.get-started-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80vw;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allow content to stack on smaller screens */
+}
+
+.get-started-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 50%; /* Left side content section */
+}
+
+.get-started-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #32a852;
+}
+
+.get-started-content p {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.get-started-form {
+  flex: 1;
+  padding: 20px;
+  max-width: 45%; /* Right side form section */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #32a852;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.register-btn {
+  padding: 12px 20px;
+  background-color: #32a852;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #27973c;
+}
+
+.already-user {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.already-user a {
+  color: #27973c;
+  text-decoration: none;
+}
+
+.already-user a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .get-started-container {
+    flex-direction: column; /* Stack content and form on small screens */
+    text-align: center;
+  }
+
+  .get-started-content {
+    max-width: 100%;
+  }
+
+  .get-started-form {
+    max-width: 100%;
+  }
+
+  .get-started-content h2 {
+    font-size: 28px; /* Smaller font size for mobile */
+  }
+
+  .get-started-content p {
+    font-size: 16px; /* Adjust text for readability on smaller screens */
+  }
+
+  .email-input, .register-btn {
+    width: 80%; /* Form elements should be smaller on mobile */
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+  }
+  h1 {
+    font-size: 28px; /* Smaller font for mobile */
+  }
+
+  p {
+    font-size: 16px; /* Adjust text for readability on smaller screens */
+  }
+
+  .explore-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  /* Adjust Button Size */
+  .section .explore-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  /* Stack content and image vertically on small screens */
+  .section-container {
+    flex-direction: column; /* Stack content and image vertically */
+    text-align: center; /* Center align the content */
+  }
+
+  /* Adjust the left content section */
+  .section-content {
+    max-width: 100%; /* Full width on small screens */
+    padding: 10px;
+  }
+
+  /* Adjust the image section */
+  .section-image {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  /* Adjust the heading size for smaller screens */
+  .section h2 {
+    font-size: 28px; /* Smaller font size for mobile */
+  }
+
+  /* Adjust the paragraph size for readability on smaller screens */
+  .section p {
+    font-size: 16px; /* Adjust text for readability on smaller screens */
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #283618;
+  color: #fefae0;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo,
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1 1 250px;
+  margin: 20px;
+}
+
+.footer-logo img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #32a852;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  color: #a8d5ba;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-social .social-icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.footer-social .social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.footer-social .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #606060;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #a8a8a8;
+}
+
+/* Responsive Footer */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo,
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    margin-bottom: 0px;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 5px;
+  }
+}
